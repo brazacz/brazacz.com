@@ -107,5 +107,5 @@ Table cell can be set alignment separately.
 |^^   B. Orange      ||^^ 2. Bad  $I = \int \rho R^{2} dV$     |
 |^^   C. Banana      ||   It's OK! ![example image][my-image]  |
 
-[my-image]: http://www.unexpected-vortices.com/sw/rippledoc/example-image.jpg "An exemplary image"
+[my-image]: https://www.unexpected-vortices.com/sw/rippledoc/example-image.jpg "An exemplary image"
 

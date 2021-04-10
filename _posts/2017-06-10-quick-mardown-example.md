@@ -96,7 +96,7 @@ Now a nested list:
 Notice again how text always lines up on 4-space indents (including
 that last line which continues item 3 above).
 
-Here's a link to [a website](http://foo.bar), to a [local
+Here's a link to [a website](https://foo.bar), to a [local
 doc](local-doc.html), and to a [section heading in the current
 doc](#an-h2-header). Here's a footnote [^1].
 
@@ -153,7 +153,7 @@ Here's a "line block" (note how whitespace is honored):
 
 and images can be specified like so:
 
-![example image](http://www.unexpected-vortices.com/sw/rippledoc/example-image.jpg "An exemplary image")
+![example image](https://www.unexpected-vortices.com/sw/rippledoc/example-image.jpg "An exemplary image")
 
 Inline math equation: $\omega = d\phi / dt$. Display
 math should get its own line like so:

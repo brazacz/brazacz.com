@@ -1,26 +1,22 @@
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
 
-- lang: en
-  img: https://www.countryflags.io/us/flat/64.png
-  text: English
+  - lang: en
+    img: https://www.countryflags.io/gb/flat/32.png
+    text: English
 
-- lang: fr
-  img: https://www.countryflags.io/fr/flat/64.png
-  text: Franch
+  - lang: de
+    img: https://www.countryflags.io/de/flat/32.png
+    text: German
 
-- lang: zh-CN
-  img: https://www.countryflags.io/cn/flat/64.png
-  text: Chinese(Simple)
+  - lang: es
+    img: https://www.countryflags.io/es/flat/32.png
+    text: Spanish
 
-- lang: ja
-  img: https://www.countryflags.io/jp/flat/64.png
-  text: Japan
+  - lang: fr
+    img: https://www.countryflags.io/fr/flat/32.png
+    text: French
 
-- lang: ko
-  img: https://www.countryflags.io/kr/flat/64.png
-  text: Korean
-
-- lang: ru
-  img: https://www.countryflags.io/ru/flat/64.png
-  text: Russia
+  - lang: cs
+    img: https://www.countryflags.io/cz/flat/32.png
+    text: Czech

@@ -6,7 +6,7 @@
 
 {%- include functions.html func='log' level='debug' msg='Get header_transparent value' -%}
 {%- assign name = 'header_transparent' -%}
-{%- include functions.html func='get_value' default=true -%}
+{%- include functions.html func='get_value' default=false -%}
 {%- assign header_transparent = return -%}
 
 {%- if banner and header_transparent -%}

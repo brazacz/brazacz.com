@@ -36,10 +36,10 @@ html {
     }
 
     footer.site-footer {
-      background-color: transparent;
+      /* background-color: transparent; */
 
       .site-footer-inner {
-        border-top: solid 1px #eee;
+        /* border-top: solid 1px #eee; */
       }
     }
   }
@@ -96,8 +96,8 @@ html {
 
   .site-brand-inner {
     @include relative-font-size(1.125);
-    font-weight: $base-font-weight;
-    letter-spacing: -1px;
+    font-weight: $base-font-weight * 1.5;
+    /* letter-spacing: -1px; */
     transition: 0.1s filter color;
 
     &, &:visited {
@@ -196,7 +196,7 @@ html {
 
   .site-footer-inner {
     transition: border-top 0.2s;
-    padding: $spacing-unit * 1.8 0;
+    padding: $spacing-unit * 1.2 0;
   }
 
   a {
@@ -374,9 +374,9 @@ html {
   @extend %post-header;
 
   .post-header {
-    margin: 50px auto 60px;
+    margin: 0px auto 20px;
     padding: 0 0 20px;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 0px solid #ebebeb;
 
     .post-title {
       margin-bottom: 2px;
@@ -394,6 +394,8 @@ html {
     word-break: normal;
 
     h2 {
+      border-top: 1px solid #ebebeb;
+      padding-top: 20px;
       @include relative-font-size(2);
 
       @include media-query($on-laptop) {
@@ -418,17 +420,17 @@ html {
     }
 
     img, svg, iframe {
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
       display: block;
     }
 
     h2, h3, h4, h5, h6 {
-      margin: 60px 0 19px;
+      margin: 20px 0 15px;
     }
 
     p, hr {
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
 
     hr {
@@ -442,7 +444,8 @@ html {
     &>*:first-child {
       @include relative-font-size(1.425);
       color: #333;
-      margin-bottom: 14px;
+      padding: 20px 0 20px;
+      border-top: 1px solid #ebebeb;
     }
 
     ul {
@@ -490,8 +493,9 @@ html {
 .post-nav {
   display: flex;
   justify-content: space-between;
-  margin: 72px 0 59px;
-  padding: 31px 0 0;
+  margin: 72px 0 0;
+  padding: 20px 0 20px;
+  border-top: 1px solid #ebebeb;
 
   a {
     @include relative-font-size(1.125);

@@ -2,6 +2,13 @@
 
 // Define defaults for each variable.
 
+$slategrey-color: #748b95;
+$coolblack-color: #090a0b;
+$spacegrey-color: #353535;
+$snowwhite-color: #ffffff;
+
+$theme-color: $slategrey-color !default;
+
 $base-font-family: "Noto Sans Light", AppleSDGothicNeo-Regular, "Malgun Gothic", "Apple Color Emoji", Helvetica, Arial, Oswald, sans-serif, !default;
 $base-font-size: 14px !default;
 $base-font-weight: 400 !default;
@@ -12,7 +19,7 @@ $spacing-unit:     30px !default;
 
 $text-color:       #454545 !default;
 $background-color: #fff !default;
-$brand-color:      #ff5100 !default;
+$brand-color:      #ff7332 !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -23,12 +30,12 @@ $white-color: #fdfdfd !default;
 $table-text-align: left !default;
 
 $header-height: $base-line-height * $base-font-size * 2.85 !default;
-$header-text-color: invert($theme-color) !default;
+$header-text-color: $white-color !default;
 $header-background-color: $theme-color !default;
 
 $footer-height: $header-height * 1.05 !default;
-$footer-text-color: lighten(invert($theme-color), 25%) !default;
-$footer-background-color: darken($theme-color, 5%) !default;
+$footer-text-color: $white-color !default;
+$footer-background-color: $theme-color !default;
 
 $banner-height: 640px !default;
 $banner-text-color: lighten($white-color, 0%) !default;

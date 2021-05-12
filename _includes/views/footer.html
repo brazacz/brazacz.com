@@ -3,11 +3,10 @@
 
   <div class="wrapper">
     <div class="site-footer-inner">
-      <div>{{ site.copyright }} {% if site.author %}@{{ site.author | escape }}{% endif %}</div>
-      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
-      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></div>
+      <div>{{ site.copyright }} {% if site.author %}<a href="{{ site.github_link }}" target="_blank">{{ site.author | escape | upcase }} <i class="fa fa-github" aria-hidden="true" title="Github"></i></a> | {% endif %}Powered by <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a>, <a href="https://github.com/jeffreytse/jekyll-theme-yat" target="_blank">Yat Theme</a>, <a href="https://github.com" target="_blank">Github</a> and <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</div>
+      <div>{% if site.description %}&#10077;<i>{{ site.description }}</i>&#10078;{% endif %}</div>
+      <div>This website is open source, you can view the <a href="https://github.com/brazacz/brazacz.com" target="_blank">source code</a>. Found a mistake? <a href="https://github.com/brazacz/brazacz.com/issues/new" target="_blank">Let me know</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS <i class="fa fa-rss" aria-hidden="true" title="RSS"></i></a></div>
     </div>
   </div>
 </footer>

@@ -2,6 +2,10 @@
 
     <div class="post-content e-content" itemprop="articleBody">
 
+      {% if page.last_modified_at %}
+        <blockquote><b>This article was updated {{ page.last_modified_at | date: "%b %d, %Y" }}</b></blockquote>
+      {% endif %}
+
       {{ content }}
 
     </div>

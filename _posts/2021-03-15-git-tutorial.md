@@ -516,7 +516,7 @@ deactivate "Local Repository"
 ==Download changes==
 "Local Repository" <-- "Remote Repository" : git fetch
 "Working Directory" <-- "Local Repository" : git merge //or// git rebase
-"Working Directory" <-- "Remote Repository" : git pull
+"Working Directory" <-- "Remote Repository" : git pull //or// git clone
 
 ==Revert changes==
 "Working Directory" <-- "Local Repository" : git checkout HEAD

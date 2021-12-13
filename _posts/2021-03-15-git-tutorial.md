@@ -83,7 +83,10 @@ To make Git work properly, it is necessary to set **Username** and **Email** in 
 	- **Sublime Text**: `git config --global core.editor "'C:/Program Files (x86)/sublime text 3/subl.exe' -w"`
 	- [Other text editors](https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config){:target="_blank"}
 - You can **allow colors** in Git with command:  
-	`git config --global color.ui true`
+	`git config --global color.ui true`  
+- You can configure Git to handle **line endings** (CRLF vs. LF) automatically so you can collaborate effectively with people who use different operating systems with command:  
+    `git config --global core.autocrlf true` (in Windows ecosystem)  
+    `git config --global core.autocrlf input` (in Linux and macOS ecosystems)  
 
 ### Optional configuration of Bash
 

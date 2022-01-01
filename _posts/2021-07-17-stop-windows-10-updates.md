@@ -1,10 +1,8 @@
 ---
-layout: post
 title: How to stop automatic updates of Windows 10
 subtitle:
 date: 2021-07-17 20:00 +0200
 last_modified_at:
-permalink: ":title"
 tags: [windows]
 ---
 

@@ -117,7 +117,17 @@ header_pages:
 #   - categories.html
 
 # Page default value
-# defaults:
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      permalink: "/blog/:title"
+  - scope:
+      path: "_drafts"
+    values:
+      layout: "post"
+      permalink: "/blog/:title"
 #   home:
 #     heading: "Your awesome heading"
 #     subheading: "Your awesome subheading"

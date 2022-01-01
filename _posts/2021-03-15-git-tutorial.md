@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
 last_modified_at:
-permalink: ":title"
 tags: [git,bash,windows,tutorial]
+
 course_name: Git Essential Training The Basics
 course_author_name: Kevin Skoglund
 course_author_linkedin: https://www.linkedin.com/learning/instructors/kevin-skoglund

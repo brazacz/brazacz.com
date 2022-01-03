@@ -1,0 +1,10 @@
+[![Brazacz.com](https://img.shields.io/badge/brazacz-brazacz.com-blue?logo=github)](https://github.com/brazacz/brazacz.com/)
+[![powered by Jekyll](https://img.shields.io/badge/powered_by-Jekyll-blue.svg)](https://jekyllrb.com/)
+[![GitHub](https://img.shields.io/github/license/brazacz/brazacz.com)](https://github.com/brazacz/brazacz.com/blob/main/LICENSE.txt)
+[![Netlify](https://img.shields.io/netlify/60f8a820-a295-40ab-8e57-881f7637bff8?logo=Netlify)](https://www.netlify.com/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbrazacz.com)](https://www.brazacz.com/)
+
+[![GitHub issues](https://img.shields.io/github/issues/brazacz/brazacz.com)](https://github.com/brazacz/brazacz.com/issues?q=is%3Aopen)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/brazacz/brazacz.com)](https://github.com/brazacz/brazacz.com/pulls?q=is%3Aopen)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/brazacz/brazacz.com)
+![GitHub last commit](https://img.shields.io/github/last-commit/brazacz/brazacz.com)

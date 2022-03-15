@@ -1,0 +1,46 @@
+@startuml
+    hide footbox
+    skinparam Shadowing false
+    skinparam sequence {
+        DividerBorderThickness		0
+        DividerBackgroundColor		#748b95
+        DividerFontSize				12
+        DividerFontColor			#White
+        LifeLineBorderThickness		1
+        LifeLineBorderColor			#748b95
+        LifeLineBackgroundColor		#ff7332
+        ParticipantBorderThickness	3
+        ParticipantBorderColor		#748b95
+        ParticipantFontSize			18
+        ParticipantFontStyle		Bold
+        ArrowColor					#ff7332
+        ArrowThickness				2
+    }
+    participant "Working Directory" #LightGrey
+    participant "  Staging Index  " #LightYellow
+    participant "Local Repository" #LightGreen
+    participant "Remote Repository" #LightBlue
+
+    ==Upload changes==
+    "Working Directory" -> "  Staging Index  " : git add
+    activate "  Staging Index  "
+    "  Staging Index  " -> "Local Repository" : git commit
+    deactivate "  Staging Index  "
+    activate "Local Repository"
+    "Working Directory" -> "Local Repository" : git commit -a
+    "Local Repository" -> "Remote Repository" : git push
+    deactivate "Local Repository"
+
+    ==Download changes==
+    "Local Repository" <-- "Remote Repository" : git fetch
+    "Working Directory" <-- "Local Repository" : git merge //or// git rebase
+    "Working Directory" <-- "Remote Repository" : git pull //or// git clone
+
+    ==Revert changes==
+    "Working Directory" <-- "Local Repository" : git checkout HEAD
+    "Working Directory" <-- "  Staging Index  " : git checkout
+
+    ==Compare changes==
+    "Working Directory" <-> "  Staging Index  " : git diff
+    "Working Directory" <-> "Local Repository" : git diff HEAD
+@enduml

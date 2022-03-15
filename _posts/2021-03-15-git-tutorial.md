@@ -2,33 +2,24 @@
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
-last_modified_at:
+last_modified_at: 2022-03-15 19:00 +0100
 tags: [git,bash,windows,tutorial]
-
-course_name: Git Essential Training The Basics
-course_author_name: Kevin Skoglund
-course_author_linkedin: https://www.linkedin.com/learning/instructors/kevin-skoglund
-course_author_github: https://github.com/kevinskoglund
-course_released: 22.5.2019
-course_duration: 2h 55m
-course_source: https://www.linkedin.com/learning/git-essential-training-the-basics
 ---
 
-> These are my personal notes written during *{{ page.course_name }}* by [{{ page.course_author_name }}]({{ page.course_author_github }}){:target="_blank"}.
+
+## 1. History of Git
+
+Git is an open source software for distributed version control. It was created in 2005 by Linus Torvalds (creator of Linux) as a replacement for BitKeeper to manage Linux kernel source code.
 
 
-## History of Git
+## 2. Git application
 
-> Git is an open source software for distributed version control.
+Git is usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on different systems).
 
-> It was created in 2005 by Linus Torvalds (creator of Linux) as a replacement for BitKeeper to manage Linux kernel source code.
-
-> Git is usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on different systems).
-
-> [GitHub](https://github.com/){:target="_blank"}, [GitLab](https://gitlab.com/){:target="_blank"} and [Bitbucket](https://bitbucket.org){:target="_blank"} are a cloud based hosting services based on [Git software](https://git-scm.com){:target="_blank"}.
+[GitHub](https://github.com/){:target="_blank"}, [GitLab](https://gitlab.com/){:target="_blank"} and [Bitbucket](https://bitbucket.org){:target="_blank"} are a cloud based hosting services based on [Git software](https://git-scm.com){:target="_blank"}.
 
 
-## Git installation (Windows)
+## 3. Git installation (Windows)
 
 - Download latest version of **Git Bash** from official Git sites: [https://git-scm.com](https://git-scm.com){:target="_blank"}
 - Follow the steps and install the package
@@ -43,9 +34,9 @@ course_source: https://www.linkedin.com/learning/git-essential-training-the-basi
 	- MinTTY terminal (Linux style terminal): yes
 
 
-## Git configuration
+## 4. Git configuration
 
-### 3 levels of Git configuration:
+### 4.1 Three levels of Git configuration:
 
 - **System level configuration**  
 	- Config storage: `Program Files\Git\etc\gitconfig*`  
@@ -61,7 +52,7 @@ course_source: https://www.linkedin.com/learning/git-essential-training-the-basi
 	- Change settings: `git config --local <options>`
 
 
-### Essential configuration of Git:
+### 4.2 Essential configuration of Git:
 
 To make Git work properly, it is necessary to set **Username** and **Email** in user level configuration:
 
@@ -71,7 +62,8 @@ To make Git work properly, it is necessary to set **Username** and **Email** in 
 - Set your **Email** with command:  
 	`git config --global user.email "you@example.com"`
 
-### Optional configuration of Git:
+
+### 4.3 Optional configuration of Git:
 
 - You can set your default text editor by command:  
 	- **Vim**: `git config --global core.editor "vim"`
@@ -87,7 +79,8 @@ To make Git work properly, it is necessary to set **Username** and **Email** in 
     `git config --global core.autocrlf true` (in Windows ecosystem)  
     `git config --global core.autocrlf input` (in Linux and macOS ecosystems)  
 
-### Optional configuration of Bash
+
+### 4.4 Optional configuration of Bash
 
 Bellow you can see my personal Bash settings.
 
@@ -135,11 +128,11 @@ Bellow you can see my personal Bash settings.
 	```
 
 
-## Getting started
+## 5. Getting started
 
-### Initialize a local repository:
+### 5.1 Initialize a local repository:
 
-> To get started, create a new project and start to track changes in a project folder
+To get started, create a new project and start to track changes in a project folder.
 
 - Create project folder with command:  
 	`mkdir First_Project`
@@ -148,15 +141,15 @@ Bellow you can see my personal Bash settings.
 - Initialize a repository inside project folder with command:  
 	`git init`  
 	
-> "git init" creates a ".git" folder inside project directory where all changes are recorded
+"git init" creates a ".git" folder inside project directory where all changes are recorded.
 
 
-### Commit the change
+### 5.2 Commit the change
 
-> When you finish your changes in your project folder and you are ready to record new version, commit the changes in local repository
+When you finish your changes in your project folder and you are ready to record new version, commit the changes in local repository.
 
 - First, make your changes in the project folder. You can use your favourite text editor.
-- Add all changes in project folder to the [staging index](#h-the-3-trees) with command:  
+- Add all changes in project folder to the [staging index](#h-61-the-3-trees) with command:  
 	`git add .`  
 	or  
 	`git add --all`
@@ -166,7 +159,7 @@ Bellow you can see my personal Bash settings.
 	The message parameter "-m" is the way to describe the change. It should be a short single-line summary with less than 50 characters
 
 
-### View the commit log
+### 5.3 View the commit log
 
 Show all commits done inside the project:  
 `git log`
@@ -187,9 +180,9 @@ Show all commits containing "Init" (works with Regex):
 `git log --grep="Init"`
 
 
-## Git concepts and architecture
+## 6. Git concepts and architecture
 
-### The 3-trees
+### 6.1 The 3-trees
 
 Git uses a 3-trees architecture:
 
@@ -197,38 +190,10 @@ Git uses a 3-trees architecture:
 2. **Staging index** - contains changes that we are about to commit into repository 
 3. **Repository** - committed files which are tracked by Git
 
-
-	```plantuml!
-	@startuml
-	'!theme materia-outline
-	skinparam activity {
-		FontSize				12
-		FontStyle				Bold
-		FontColor				white
-		ArrowColor				#506169
-		ArrowThickness			2
-		BorderThickness			2
-		DiamondFontColor		black
-		BackgroundColor			#748b95
-		DiamondBackgroundColor	#ffb998
-		BorderColor				#506169
-		DiamondBorderColor		#ff7332	
-	}
-	skinparam {
-		Padding					2
-		Ranksep					30
-		'Linetype				ortho
-		'Monochrome				true
-	}
-	:Working directory;
-	-> git add;
-	:    Staging index    ;
-	-> git commit;
-	:      Repository      ;
-	```
+![3-trees](/assets/images/diagrams/3-trees.svg)
 
 
-### Hash values
+### 6.2 Hash values
 
 - Git uses SHA-1 hash algorithm to keep data integrity (40-character hexadecimal string - contains 0-9 and a-f)
 - Git generates a checksum for each change set
@@ -236,15 +201,15 @@ Git uses a 3-trees architecture:
 - Same data always equals same checksum
 
 
-### HEAD
+### 6.3 HEAD
 
 - Pointer to tip current branch in repository
 - Last state of repository, what was last checked out
 
 
-## Make changes to files
+## 7. Make changes to files
 
-### Add new files
+### 7.1 Add new files
 
 - First, add new file(s) in your repository
 - To see new/untracked files in your repository, use command:  
@@ -255,7 +220,7 @@ Git uses a 3-trees architecture:
 	`git add .`
 
 
-### Edit files
+### 7.2 Edit files
 
 When you edit a file in repository, you have to treat it as a new file with following steps:
 ```bash
@@ -264,7 +229,7 @@ git commit -m "<message>"
 ```
 
 
-### View changes with diff
+### 7.3 View changes with diff
 
 To see changes to file(s) use the command:  
 `git diff`
@@ -272,7 +237,7 @@ To see changes to file(s) use the command:
 This command by default compares **working directory** against **staging index**.
 
 
-### View only staged changes
+### 7.4 View only staged changes
 
 As soon as you use `git add <file>`, you won't see the changes of the file with `git diff`
 
@@ -284,13 +249,13 @@ or
 These two commands compares **repository** against **staging index**
 
 
-### Mark word changes
+### 7.5 Mark word changes
 
 By default `git diff` mark all the lines where change happened. To see changed words, use command:  
 `git diff --color-words`
 
 
-### Delete files
+### 7.6 Delete files
 
 To delete file from Git repository, use the command:
 ```bash
@@ -299,7 +264,7 @@ git commit -m "<message>"
 ```
 
 
-### Move and rename files
+### 7.7 Move and rename files
 
 To move or rename the file from Git repository, use the command:
 ```bash
@@ -307,7 +272,8 @@ git mv <file> <file_moved_or_renamed>
 git commit -m "<message>"
 ```
 
-### Stage and commit shortcut
+
+### 7.8 Stage and commit shortcut
 
 There is a shortcut for `git add` and `git commit`. To stage and commit all changes to tracked files use command:  
 `git commit -a`
@@ -318,7 +284,7 @@ To provide a comment about change use:
 It does not include untracked files
 
 
-### View a commit
+### 7.9 View a commit
 
 To view what was changed in the past, you can use a command:  
 `git show <hash>`
@@ -334,7 +300,7 @@ or
 `git show HEAD --color-words`
 
 
-### Compare commits
+### 7.10 Compare commits
 
 To compare 2 different commits and see the changes, use the command:  
 `git diff <hash_1>..<hash_2>`
@@ -343,7 +309,7 @@ To view exact word changes, use this command:
 `git diff <hash_1>..<hash_2> --color-words`
 
 
-### Multiline commit messages
+### 7.11 Multiline commit messages
 
 To add a multiline commit message follow these steps:
 - Write a command `git commit -a`
@@ -355,7 +321,7 @@ To see only first lines of commit messages, use command:
 `git log --oneline`
 
 
-### Make atomic commits
+### 7.12 Make atomic commits
 
 - It is a standard approach to commit changes per partes by topic
 - Make small commits that affect a single aspect
@@ -363,21 +329,21 @@ To see only first lines of commit messages, use command:
 - It's easier to understand, to work with and to find bugs
 
 
-## Undo changes
+## 8. Undo changes
 
-### Undo working directory changes
+### 8.1 Undo working directory changes
 
 If you want undo changes in **working directory** and go back to version from repository, use command:  
 `git checkout -- <file>`
 
 
-### Unstage files
+### 8.2 Unstage files
 
 If you want to undo changes in **staging index** and go back to version from repository, use command:  
 `git reset HEAD <file>`
 
 
-### Amend commits
+### 8.3 Amend commits
 
 If you do a commit and forget to add some information, you can additionally add (amend) a change to the last commit by command:
 ```bash
@@ -387,7 +353,7 @@ git commit --amend -m "<message>"
 This works only for last commit, cannot change older commits in this way
 
 
-### Retrieve old versions
+### 8.4 Retrieve old versions
 
 - Git only allows editing (amending) the most recent commit
 - Edits which undo older changes are new commits because of data integrity
@@ -397,7 +363,7 @@ This works only for last commit, cannot change older commits in this way
 - If you don't want to revert the commit, use the command `git reset HEAD <file>` to clean the staging directory and then use `git checkout -- <file>` to clean the working directory
 
 
-### Revert a commit
+### 8.5 Revert a commit
 
 - It means to do the opposite of what specific commit did
 - To revert a specific commit, use command `git revert <hash>`
@@ -408,7 +374,7 @@ This works only for last commit, cannot change older commits in this way
 - If you use atomic commits, it is very easy revert specific change
 
 
-### Remove untracked files
+### 8.6 Remove untracked files
 
 To remove files which are not tracked by Git yet or files in working directory, you can use one of these commands:
 - To see what would be removed use command `git clean -n`
@@ -416,9 +382,9 @@ To remove files which are not tracked by Git yet or files in working directory, 
 - To remove all untracked files use command `git clean -f` (f like "force")
 
 
-## Ignore files
+## 9. Ignore files
 
-### Use .gitignore Files
+### 9.1 Use .gitignore files
 
 To ignore changes of specific files (e.g. temporary files, logs, databases, big files, compressed files, videos, compiled source code, etc.), you can write these files in `.gitignore` file. Changes made in these files will be ignored by Git. If the `.gitignore` file does not exist yet, create it in project directory and commit it to see the changes in `.gitignore` file.
 
@@ -440,7 +406,7 @@ _site/
 ```
 
 
-### Globally ignore files
+### 9.2 Globally ignore files
 
 - Ignore files in all repositories
 - Settings are not tracked in repository
@@ -450,7 +416,7 @@ Use e.g. this command to define where to find global settings:
 `git config --global core.excludefile ~/.gitignore_global`
 
 
-### Ignore tracked files
+### 9.3 Ignore tracked files
 
 If a file is already tracked follow these steps to ignore it:
 - You have to make it untracked first with command `git rm --cached <file>`
@@ -458,12 +424,12 @@ If a file is already tracked follow these steps to ignore it:
 - Finally you commit that the file will be removed from tracking with command `git commit -m "<message>`
 
 
-### Track empty directory
+### 9.4 Track empty directory
 
 By default Git does not track empty directory. To let him track it you have to put some file in it. The convention is to create a blank file `.gitkeep` in this folder directory and commit it.
 
 
-## Branches
+## 10. Branches
 
 Branches create another line of development in the project. The default branch in Git is **master**.
 
@@ -476,62 +442,14 @@ Branches create another line of development in the project. The default branch i
 - To rename branch, use command: `git branch -m <branch-before> <branch-after>`
 
 
-## Git life cycle
+## 11. Git life cycle
 
-```plantuml!
-@startuml
-hide footbox
-skinparam Shadowing false
-skinparam sequence {
-	DividerBorderThickness		0
-	DividerBackgroundColor		#748b95
-	DividerFontSize				12
-	DividerFontColor			#White
-	LifeLineBorderThickness		1
-	LifeLineBorderColor			#748b95
-	LifeLineBackgroundColor		#ff7332
-	ParticipantBorderThickness	3
-	ParticipantBorderColor		#748b95
-	ParticipantFontSize			18
-	ParticipantFontStyle		Bold
-	ArrowColor					#ff7332
-	ArrowThickness				2
-}
-participant "Working Directory" #LightGrey
-participant "  Staging Index  " #LightYellow
-participant "Local Repository" #LightGreen
-participant "Remote Repository" #LightBlue
-
-==Upload changes==
-"Working Directory" -> "  Staging Index  " : git add
-activate "  Staging Index  "
-"  Staging Index  " -> "Local Repository" : git commit
-deactivate "  Staging Index  "
-activate "Local Repository"
-"Working Directory" -> "Local Repository" : git commit -a
-"Local Repository" -> "Remote Repository" : git push
-deactivate "Local Repository"
-
-==Download changes==
-"Local Repository" <-- "Remote Repository" : git fetch
-"Working Directory" <-- "Local Repository" : git merge //or// git rebase
-"Working Directory" <-- "Remote Repository" : git pull //or// git clone
-
-==Revert changes==
-"Working Directory" <-- "Local Repository" : git checkout HEAD
-"Working Directory" <-- "  Staging Index  " : git checkout
-
-==Compare changes==
-"Working Directory" <-> "  Staging Index  " : git diff
-"Working Directory" <-> "Local Repository" : git diff HEAD
-
-@enduml
-```
+![git-life-cycle](/assets/images/diagrams/git-life-cycle.svg)
 
 
-## Further resources
+## 12. Further resources
 
-- [{{ page.course_name }}]({{ page.course_source }}){:target="_blank"}
+- [Git Essential Training The Basics](https://www.linkedin.com/learning/git-essential-training-the-basics){:target="_blank"} by [Kevin Skoglund](https://github.com/kevinskoglund){:target="_blank"}
 - [Git Official Website](https://git-scm.com/){:target="_blank"}
 - [Git Cheatsheet by GitLab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf){:target="_blank"}
 - [Visual Git Cheatsheet by NDP Software](https://ndpsoftware.com/git-cheatsheet.html){:target="_blank"}

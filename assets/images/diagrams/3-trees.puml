@@ -1,0 +1,27 @@
+@startuml
+	'!theme materia-outline
+	skinparam activity {
+		FontSize				12
+		FontStyle				Bold
+		FontColor				white
+		ArrowColor				#506169
+		ArrowThickness			2
+		BorderThickness			2
+		DiamondFontColor		black
+		BackgroundColor			#748b95
+		DiamondBackgroundColor	#ffb998
+		BorderColor				#506169
+		DiamondBorderColor		#ff7332	
+	}
+	skinparam {
+		Padding					2
+		Ranksep					30
+		'Linetype				ortho
+		'Monochrome				true
+	}
+	:Working directory;
+	-> git add;
+	:    Staging index    ;
+	-> git commit;
+	:      Repository      ;
+@enduml

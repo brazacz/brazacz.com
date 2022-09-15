@@ -1,7 +1,7 @@
 ---
 title: Regex Tutorial
 subtitle:
-date: 2022-03-13         20:00 +0100
+date: 2022-03-13 20:00 +0100
 last_modified_at:
 tags: [regex,regular-expressions,tutorial]
 ---

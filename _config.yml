@@ -33,7 +33,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.brazacz.com" # the base hostname & protocol for your site, e.g. https://example.com
-favicon: "" # the favicon for your site
+favicon_ico: "/favicon.ico" # the favicon for your site (with .ico extension)
+favicon_svg: "/favicon.svg" # the favicon for your site (with .svg extension)
 github_link: https://github.com/brazacz
 
 # Yat date format

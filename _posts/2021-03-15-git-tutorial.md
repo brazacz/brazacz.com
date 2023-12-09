@@ -2,7 +2,7 @@
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
-last_modified_at: 2022-03-15 19:00 +0100
+last_modified_at: 2023-12-09 17:00 +0100
 tags: [git,bash,windows,tutorial]
 ---
 
@@ -343,7 +343,7 @@ If you want to undo changes in **staging index** and go back to version from rep
 `git reset HEAD <file>`
 
 
-### 8.3 Amend commits
+### 8.3 Change last commit
 
 If you do a commit and forget to add some information, you can additionally add (amend) a change to the last commit by command:
 ```bash
@@ -431,15 +431,33 @@ By default Git does not track empty directory. To let him track it you have to p
 
 ## 10. Branches
 
-Branches create another line of development in the project. The default branch in Git is **master**.
+Branches create another line of development in the project. By default the main branch in Git is set to **master**, but it can by changed in Git configuration. E.g. cloud services as Github, Gitlab and DevOps use **main** as a default branch. 
 
-- To see branches in repository, use command: `git branch`
-- To see all branches (local and remote), use command: `git branch -a`
-- To create new branch, use command: `git branch <branch>`
-- To switch to another branch, use command: `git checkout <branch>`
-- To create and switch to new branch, use command: `git checkout -b <branch>`
-- To remove branch, switch to another branch and use command: `git branch -D <branch>`
-- To rename branch, use command: `git branch -m <branch-before> <branch-after>`
+### 10.1 Local branches
+
+Local branches are branches on your machine.
+
+- To see local branches in repository: `git branch` or `git branch --list`
+- To create new local branch (based on main branch): `git branch <local-branch-name>`
+- To switch to another local branch: `git checkout <another-branch>`
+- To create and switch to new local branch: `git checkout -b <local-branch-name>`
+- To sync another branch with changes on main branch: `git checkout <another-branch>` and then `git merge main`
+- To rename a branch: `git branch -m <branch-before> <branch-after>`
+- To remove a local branch safely: `git branch -d <local-branch-name>` (it will delete the branch only if it has already been pushed and merged with the remote branch)
+- To force delete the specified local branch, even if it has unmerged changes: `git branch -D <local-branch-name>`
+- To set default branch in git configuration: `git config --global init.defaultBranch <default-branch-name>` (it influences only new repositories)
+
+
+### 10.2 Remote branches
+
+Remote branches are branches on remote machine/server (e.g. GitHub, GitLab, BitBucket, DevOps, etc.)
+
+- To add remote repo to a local repo config: `git remote add origin https://<server>/<user>/<repo>.git`
+- To verify new remote repo: `git remote -v`
+- To push local repo branch to a remote repo for the first time: `git push -u origin <local-branch-name>` (`-u` argument will create a link between local and remote branch)
+- To see all branches (local and remote): `git branch -a`
+- To remove a remote branch: `git push origin --delete <remote-branch-name>`
+- When you (or someone else) remove a remote branch and you want to synchronize this change to your local repository: `git fetch --prune`
 
 
 ## 11. Git life cycle

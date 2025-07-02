@@ -2,7 +2,7 @@
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
-last_modified_at: 2025-07-02 09:00 +0100
+last_modified_at: 2025-07-02 11:00 +0100
 tags: [git,bash,windows,tutorial]
 ---
 
@@ -65,7 +65,7 @@ To make Git work properly, it is necessary to set **Username** and **Email** in 
 
 ### 4.3 Optional configuration of Git:
 
-- You can set your default text editor by command:  
+- You can set your **default text editor** by command:  
 	- **Vim**: `git config --global core.editor "vim"`
 	- **Notepad**: `git config core.editor notepad`
 	- **Notepad++**: `git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`
@@ -289,12 +289,12 @@ It does not include untracked files
 ### 7.9 View a commit
 
 To view what was changed in the past, you can use a command:  
-`git show <hash>`
+`git show <commit_hash>`
 
 You don't need to write all 40-character hash. Usually first 6 characters of SHA-1 hash is enough.
 
 To view exact word changes, use this command:  
-`git show <hash> --color-words`
+`git show <commit_hash> --color-words`
 
 To see the last changes, you can use `HEAD` instead of `hash value`:  
 `git show HEAD`  
@@ -359,7 +359,7 @@ This works only for last commit, cannot change older commits in this way
 
 - Git only allows editing (amending) the most recent commit
 - Edits which undo older changes are new commits because of data integrity
-- To retrieve the old version of specific file from current branch to staging directory, use the command `git checkout <hash> -- <file>`
+- To retrieve the old version of specific file from current branch to staging directory, use the command `git checkout <commit_hash> -- <file>`
 - With command `git diff --staged` you can see it is going to revert the change which was done in the past.
 - If you want to revert the commit of specific file, use command `git commit -m <message>`
 - If you don't want to revert the commit, use the command `git reset HEAD <file>` to clean the staging directory and then use `git checkout -- <file>` to clean the working directory
@@ -368,7 +368,7 @@ This works only for last commit, cannot change older commits in this way
 ### 8.5 Revert a commit
 
 - It means to do the opposite of what specific commit did
-- To revert a specific commit, use command `git revert <hash>`
+- To revert a specific commit, use command `git revert <commit_hash>`
 - Your default text editor will automatically open a file named `COMMIT_EDITMSG`
 - Write a multiline commit message to the top part of `COMMIT_EDITMSG`, save it and close it
 - You can check the log of last change with command `git log -n 1`
@@ -376,7 +376,15 @@ This works only for last commit, cannot change older commits in this way
 - If you use atomic commits, it is very easy revert specific change
 
 
-### 8.6 Remove untracked files
+### 8.6 Reset a commit
+
+- Reseting a commit softly will undo a commit and move all changes back to working directory
+- Use it rarely, it will change the commit history
+- To undo last commit, use command: `git reset --soft HEAD~1` 
+- To rollback to a specific commit, use command: `git reset --soft <commit_hash_of_where_you_want_to_be>`
+
+
+### 8.7 Remove untracked files
 
 To remove files which are not tracked by Git yet or files in working directory, you can use one of these commands:
 - To see what would be removed use command `git clean -n`

@@ -2,7 +2,7 @@
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
-last_modified_at: 2023-12-09 17:00 +0100
+last_modified_at: 2025-07-02 09:00 +0100
 tags: [git,bash,windows,tutorial]
 ---
 
@@ -78,6 +78,8 @@ To make Git work properly, it is necessary to set **Username** and **Email** in 
 - You can configure Git to handle **line endings** (CRLF vs. LF) automatically so you can collaborate effectively with people who use different operating systems with command:  
     `git config --global core.autocrlf true` (in Windows ecosystem)  
     `git config --global core.autocrlf input` (in Linux and macOS ecosystems)  
+- You can change **default branch** from master to main, so every time you run `git init`, it should initialize a Git repo with the branch name **main**. To change this behaviour, use command:  
+    `git config --global init.defaultBranch main`  
 
 
 ### 4.4 Optional configuration of Bash

@@ -2,7 +2,7 @@
 title: Git Tutorial
 subtitle:
 date: 2021-05-22 12:00 +0100
-last_modified_at: 2025-07-02 11:00 +0100
+last_modified_at: 2025-08-19 22:00 +0100
 tags: [git,bash,windows,tutorial]
 ---
 
@@ -460,9 +460,10 @@ Local branches are branches on your machine.
 
 ### 10.2 Remote branches
 
-Remote branches are branches on remote machine/server (e.g. GitHub, GitLab, BitBucket, DevOps, etc.)
+Remote branches are branches on remote machine/server (e.g. GitHub, GitLab, BitBucket, DevOps, Codeberg, etc.)
 
 - To add remote repo to a local repo config: `git remote add origin https://<server>/<user>/<repo>.git`
+- To add application token authentication: `git remote set-url origin https://<user>:<apptoken>@<server>/<user>/<repo>.git`
 - To verify new remote repo: `git remote -v`
 - To push local repo branch to a remote repo for the first time: `git push -u origin <local-branch-name>` (`-u` argument will create a link between local and remote branch)
 - To see all branches (local and remote): `git branch -a`
